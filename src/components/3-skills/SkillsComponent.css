@@ -1,0 +1,43 @@
+.skills {
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+  justify-content: center; /* Center children vertically */
+  align-items: center; /* Center children horizontally */
+  color: var(--title);
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--subtitle);
+}
+
+.skill-bar {
+  background-color: var(--skills);
+  border-radius: 5px;
+  height: 20px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  background-color: var(--blue);
+  height: 100%;
+  animation: slideIn 1s ease-in-out;
+}
+
+.skill-percentage {
+  font-size: 0.8em;
+  color: var(--subtitle);
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+}
