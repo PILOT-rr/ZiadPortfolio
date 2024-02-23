@@ -11,7 +11,6 @@ const Hero = () => {
           <div className="icon-verified"></div>
         </div>
 
-        <h2 className="title">Welcome To My Portfolio</h2>
         <p className="sub-title">
           My name <span>Ziad</span> Of Moroccan Nationality , I‘m Software
           Developer And Designer , For more <br/> Information  about me

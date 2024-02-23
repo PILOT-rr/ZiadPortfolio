@@ -92,6 +92,27 @@ section.contact-us .submit:hover {
   border: 1px solid rgba(25, 68, 62, 0.574);
 }
 
+
+
+
+.animation {
+  position: relative;
+}
+
+.animation .flex {
+  width: 300px; /* Example width */
+}
+
+/* =====================================
+    2- icon mail
+  ======================================== */
+
+ 
+  
+  section.contact-us .animation .flex {
+    width: 300px; /* Example width */
+  }
+  
 /* =====================================
     3- Responsive Design (media query)
   ======================================== */
@@ -124,4 +145,5 @@ section.contact-us .submit:hover {
     width: 30%;
     margin-left: 6rem;
   }
+  
 }

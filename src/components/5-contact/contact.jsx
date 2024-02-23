@@ -62,11 +62,10 @@ const Contact = () => {
             </>
           )}
         </form>
-        <div className="border animation">
+        <div className=" animation">
           {" "}
           <Lottie
             className="flex"
-            style={{ width: "300px" , }}
             animationData={contactAnimation}
           />
         </div>

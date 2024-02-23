@@ -80,7 +80,7 @@ header.flex {
     justify-content: center;
     text-align: center;
     color: var(--subtitle);
-    border: 1px solid rgba(78, 166, 199, 0.404);
+    border: 1px solid rgb(112, 85, 163);
     transition: 0.3s;
     box-shadow: 1px 1px 40px rgba(35, 60, 60, 0.687);
   }
