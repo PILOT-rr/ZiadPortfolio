@@ -1,0 +1,117 @@
+/* Resetting default padding and margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* Allowing overflow */
+  overflow: visible;
+}
+
+/* Background image styling */
+.page-bg {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: url("https://jobs.levelhard.com.br/jobs/estudo_preloader/wallpaper.jpg") center/cover;
+  filter: blur(0);
+  z-index: 10;
+}
+
+/* Preloader container styling */
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    rgba(244, 243, 242, 0.948) 50%,
+    rgba(247, 246, 245, 0.54)
+  );
+  z-index: 10;
+}
+
+/* Preloader box styling */
+.preloader > .preloader-box {
+  position: absolute;
+  width: 345px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  margin: -15px 0 0 -150px;
+  perspective: 200px;
+}
+
+/* Individual divs inside the preloader box */
+.preloader .preloader-box > div {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #ed8860;
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  font-family: Verdana;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Styling for individual bars */
+.preloader .preloader-box > div:nth-child(1) {
+  animation: movement 600ms ease 0ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(2) {
+  animation: movement 600ms ease 75ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(3) {
+  animation: movement 600ms ease 150ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(4) {
+  animation: movement 600ms ease 225ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(5) {
+  animation: movement 600ms ease 300ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(6) {
+  animation: movement 600ms ease 375ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(7) {
+  animation: movement 600ms ease 450ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(8) {
+  animation: movement 600ms ease 525ms infinite alternate;
+}
+
+/* Keyframe animation for movement */
+@keyframes movement {
+  from {
+    transform: scale(1) translateY(0) rotateX(0);
+    box-shadow: 0 0 0 rgba(211, 40, 40, 0);
+  }
+  to {
+    transform: scale(1.5) translateY(-25px) rotateX(45deg);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+    background: rgb(85, 8, 239);
+  }
+}
+
+/* Medium screens */
+@media (max-width: 767px) {
+  .preloader > .preloader-box {
+    width: 300px;
+    height: 30px;
+    margin: -15px 0 0 -150px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .preloader > .preloader-box {
+    height: 20px;
+    margin: -10px 0 0 -100px;
+  }
+}

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import "./header.css";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("currentMode") ?? "Dark" );
+  const [theme, setTheme] = useState(
+    localStorage.getItem("currentMode") || "light"
+  );
 
   useEffect(() => {
     if (theme === "light") {
@@ -15,17 +18,21 @@ const Header = () => {
     }
   }, [theme]);
 
+  const toggleTheme = () => {
+    const newTheme = theme === "Dark" ? "light" : "Dark";
+    localStorage.setItem("currentMode", newTheme);
+    setTheme(newTheme);
+  };
+
   return (
-    <header className="  flex">
+    <header className="flex">
       <button
-        onClick={() => {
-          setShowModal(true);
-        }}
+        onClick={() => setShowModal(true)}
         className="menu icon-menu flex"
-      ></button>
+      />
 
       <div>
-        <h2  className="title name">
+        <h2 className="title name">
           PORT<span>FOLIO</span>
         </h2>
       </div>
@@ -33,64 +40,44 @@ const Header = () => {
       <nav>
         <ul className="flex">
           <li>
-            <a href="">About</a>
+            <a href="#">About</a>
           </li>
 
           <li>
-            <a href="">Projects</a>
+            <a href="#">Projects</a>
           </li>
-          
+
           <li>
-            <a href="">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
 
-      <button
-        onClick={() => {
-          //تخزين داخل Local storage
-          localStorage.setItem(
-            "currentMode",
-            theme === "Dark" ? "light" : "Dark"
-          );
-
-          //استورد القيمة Local storage
-          setTheme(localStorage.getItem("currentMode"));
-        }}
-        className="mode flex"
-      >
-        {
-          theme === "Dark" ?(
-            <span className="icon-moon-o"> </span>
-          ):(<span className="icon-sun"> </span>)
-        }
+      <button onClick={toggleTheme} className="mode flex">
+        {theme === "Dark" ? (
+          <span className="icon-moon-o"></span>
+        ) : (
+          <span className="icon-sun"></span>
+        )}
       </button>
 
       {showModal && (
         <div className="fixed">
-          <ul className="modal ">
+          <ul className="modal">
             <li>
               <button
                 className="icon-close"
-                onClick={() => {
-                  setShowModal(false);
-                }}
+                onClick={() => setShowModal(false)}
               />
             </li>
             <li>
-              <a href="">About</a>
+              <a href="#">About</a>
             </li>
             <li>
-              <a href="">Articles</a>
+              <a href="#">Articles</a>
             </li>
             <li>
-              <a href="">Projects</a>
-            </li>
-            <li>
-              <a href="">Speaking</a>
-            </li>
-            <li>
-              <a href="">Uses</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

@@ -60,10 +60,15 @@ section.hero {
     margin-top: 30px;
   }
 
+  section.hero p span{
+    font-weight: bold; /* Added font weight for emphasis */
+  }
+
   section.hero button#Mycv{
     background: var(--blue);
     color: black;
     text-align: center;
+    font-weight: bold; /* Added font weight for emphasis */
     width: 80px;
     border: none;
     border-radius: 55px;
@@ -92,31 +97,49 @@ section.hero {
  /* ===================================
       2.media  screen 
   ====================================== */
-  @media (max-width: 800px) {
-    section.hero h1#name{
-      justify-content: center;
-      margin-bottom: 1.9rem;
-      font-size: 2rem;
-    }
+@media (max-width: 800px) {
+  /* Head icon for mobile */
+  .head-icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-image: url('path/to/head-icon.png'); /* Replace 'path/to/head-icon.png' with the actual path to your head icon */
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
 
-    section.hero .icon-verified  {
-      margin-right: 0.2rem;
-      margin-bottom: 2.5rem;
+  /* Adjustments for smaller screens */
+  section.hero .parent-avatar.flex {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  section.hero .left-section {
+    text-align: center;
+  }
 
-    }
-  
-    section.hero h2.title {
-      font-size: 1.6rem;
+  section.hero h2.title {
+    font-size: 1.8rem; /* Adjust size as needed */
+    margin-bottom: 1rem; /* Adjust spacing as needed */
+  }
 
-    }
-    section.hero .right-section .animation .flex{
-      display: none;
-    }
+  section.hero .sub-title {
+    font-size: 0.8rem; /* Adjust size as needed */
+    margin-top: 1rem; /* Adjust spacing as needed */
+  }
 
+  section.hero button#Mycv {
+    width: 100px; /* Adjust size as needed */
+    margin-top: 2rem; /* Adjust spacing as needed */
+  }
+  .section.hero .all-icons {
+    padding-left: 2rem; /* Adjust spacing as needed */
+    
   }
   
-  /* ===================================
-      3. Right Section ==> animation
-  ====================================== */
-  
+
+  /* Hide animation in smaller screens */
+  section.hero .right-section.animation {
+    display: none;
+  }
+}

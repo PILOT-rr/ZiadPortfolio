@@ -3,10 +3,11 @@ import "./SkillsComponent.css"; // Import your CSS file for styling
 const SkillsComponent = () => {
   // Define your skills data
   const skills = [
-    { name: "HTML", percentage: 90 },
-    { name: "CSS", percentage: 85 },
-    { name: "JavaScript", percentage: 80 },
-    { name: "React", percentage: 75 },
+    { name: "HTML", percentage: 95 },
+    { name: "CSS", percentage: 80 },
+    { name: "JavaScript", percentage: 60 },
+    { name: "PHP", percentage: 55 },
+    { name: "React", percentage: 85 },
     { name: "Laravel", percentage: 55 },
 
     // Add more skills as needed
@@ -24,7 +25,10 @@ const SkillsComponent = () => {
             <br />
             {skills.map((skill, index) => (
               <li key={index}>
-                <div className="skill-name">{skill.name}<p className="skill-percentage">{skill.percentage}%</p></div>
+                <div className="skill-name">
+                  {skill.name}
+                  <span className="skill-percentage"> {skill.percentage}%</span>
+                </div>
                 <div className="skill-bar">
                   <div
                     className="skill-progress"
@@ -32,14 +36,12 @@ const SkillsComponent = () => {
                       width: `${skill.percentage}%`,
                       animation: "slideIn 2.5s ease-in-out",
                     }}
-                    
                   ></div>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-       
       </div>
     </section>
   );

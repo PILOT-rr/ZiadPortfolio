@@ -14,7 +14,7 @@ const Contact = () => {
         Contact us
       </h1>
       <p className="sub-title">
-        Contact us for more information and Get notified when I publish
+        Contact us for more information and get notified when I publish
         something new.
       </p>
 
@@ -51,22 +51,23 @@ const Contact = () => {
           </button>
           {state.succeeded && (
             <>
-              <Lottie
+              
+              <p style={{ fontSize: "15px", margin: "2rem" }}>
+                Your Message has reached Mr. Ziad. We hope to be as you think. <Lottie
                 className="flex"
                 style={{ width: "35px" }}
                 animationData={doneAnimation}
+                alt="Success Animation"
               />
-              <p style={{ fontSize: "15px", margin: "2rem" }}>
-                Your Message has reached Mr Ziad. We hope to be as you think.
               </p>
             </>
           )}
         </form>
-        <div className=" animation">
-          {" "}
+        <div className="animation">
           <Lottie
             className="flex"
             animationData={contactAnimation}
+            alt="Contact Animation"
           />
         </div>
       </div>

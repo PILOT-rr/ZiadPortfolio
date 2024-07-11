@@ -1,3 +1,4 @@
+/* Base styles for skills section */
 .skills {
   font-family: Arial, sans-serif;
   margin-bottom: 10px;
@@ -6,17 +7,20 @@
   color: var(--title);
 }
 
+/* Styles for the skills list */
 .skills-list {
   list-style-type: none;
   padding: 0;
 }
 
+/* Styles for skill name */
 .skill-name {
   font-weight: bold;
   margin-bottom: 5px;
   color: var(--subtitle);
 }
 
+/* Styles for skill bar container */
 .skill-bar {
   background-color: var(--skills);
   border-radius: 5px;
@@ -25,19 +29,24 @@
   overflow: hidden;
 }
 
+/* Styles for skill progress bar */
 .skill-progress {
   background-color: var(--blue);
   height: 100%;
-  animation: slideIn 1s ease-in-out;
+  animation: slideIn 1s ease-in-out; /* Apply animation to progress bar */
 }
 
+/* Styles for skill percentage text */
 .skill-percentage {
+  font-family: Arial, sans-serif;
+
   font-size: 0.8em;
   color: var(--subtitle);
 }
 
+/* Keyframe animation for skill progress bar */
 @keyframes slideIn {
   from {
-    width: 0;
+    width: 0; /* Start width of progress bar */
   }
 }

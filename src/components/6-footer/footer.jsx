@@ -11,7 +11,7 @@ const Footer = () => {
         </li>
       </ul>
 
-      <p>&copy; 2023 Ziad Mabrouki. All rights reserved. </p>
+      <p>&copy; 2023 Ziad Mabrouki. All rights reserved.  </p>
     </footer>
   );
 };
