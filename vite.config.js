@@ -7,4 +7,5 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx', '.json'], // Add '.json' if not already present
   },
+  "baase":"/ZiadPortfolio/"
 })
