@@ -1,0 +1,48 @@
+/* ======= About Section ======= */
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--bgColor); /* Use your preferred background color */
+}
+
+.about-content {
+  max-width: 800px;
+  background-color: var(--contentBgColor); /* Use your preferred content background color */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primaryColor); /* Use your preferred primary text color */
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  color: var(--secondaryColor); /* Use your preferred secondary text color */
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--textColor); /* Use your preferred text color */
+}
+
+.about-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-content ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  color: var(--textColor); /* Use your preferred text color */
+}

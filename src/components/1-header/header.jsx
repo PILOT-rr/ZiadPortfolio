@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./header.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -40,6 +40,9 @@ const Header = () => {
       <nav>
         <ul className="flex">
           <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
             <a href="#">About</a>
           </li>
 
@@ -71,10 +74,13 @@ const Header = () => {
               />
             </li>
             <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
               <a href="#">About</a>
             </li>
             <li>
-              <a href="#">Articles</a>
+              <a href="#">Projects</a>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
