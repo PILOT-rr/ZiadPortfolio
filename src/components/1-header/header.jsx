@@ -1,21 +1,15 @@
 import { useEffect, useState } from "react";
-import "./header.css";
+import { Link as ScrollLink } from "react-scroll";
+import "./header.css"; // Make sure to import your CSS file
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("currentMode") || "light"
-  );
+  const [theme, setTheme] = useState(localStorage.getItem("currentMode") || "light");
 
   useEffect(() => {
-    if (theme === "light") {
-      document.body.classList.remove("Dark");
-      document.body.classList.add("light");
-    } else {
-      document.body.classList.remove("light");
-      document.body.classList.add("Dark");
-    }
+    document.body.classList.toggle("Dark", theme === "Dark");
+    document.body.classList.toggle("light", theme === "light");
   }, [theme]);
 
   const toggleTheme = () => {
@@ -24,12 +18,17 @@ const Header = () => {
     setTheme(newTheme);
   };
 
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <header className="flex">
-      <button
-        onClick={() => setShowModal(true)}
-        className="menu icon-menu flex"
-      />
+      <button onClick={handleModalOpen} className="menu icon-menu flex" />
 
       <div>
         <h2 className="title name">
@@ -43,15 +42,19 @@ const Header = () => {
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <ScrollLink to="about" smooth={true} duration={300}>
+              About
+            </ScrollLink>
           </li>
-
           <li>
-            <a href="#">Projects</a>
+            <ScrollLink to="projects" smooth={true} duration={300}>
+              Projects
+            </ScrollLink>
           </li>
-
           <li>
-            <Link to="/contact">Contact</Link>
+            <ScrollLink to="contact" smooth={true} duration={300}>
+              Contact
+            </ScrollLink>
           </li>
         </ul>
       </nav>
@@ -65,13 +68,10 @@ const Header = () => {
       </button>
 
       {showModal && (
-        <div className="fixed">
-          <ul className="modal">
+        <div className="fixed" onClick={handleModalClose}>
+          <ul className="modal" onClick={(e) => e.stopPropagation()}>
             <li>
-              <button
-                className="icon-close"
-                onClick={() => setShowModal(false)}
-              />
+              <button className="icon-close" onClick={handleModalClose} />
             </li>
             <li>
               <a href="#">Home</a>

@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import devAnimation from "../../animation/dev.json";
 import meImage from "./me.png";
-import "./hero.css";
+import "./hero.css"; // Make sure to import your CSS file
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="left-section">
         <div className="parent-avatar flex">
           {/* Using the imported image */}
-          <img src={meImage} className="avatar" alt="" />
+          <img src={meImage} className="avatar" alt="Ziad Mabrouki" />
           <h2 className="title name">
             Ziad Mabrouki <span className="icon-verified"></span>
           </h2>
@@ -22,15 +22,13 @@ const Hero = () => {
           creating innovative solutions. With extensive experience in the field,
           I bring a blend of technical expertise and creative insight to every
           project I undertake. If you would like to learn more about my
-          background and capabilities
+          background and capabilities,{" "}
           <a
             href="./CV-Ziad-Mabrouki.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button id="Mycv" style={{ color: "#fff" }}>
-              Click Here
-            </button>
+            <button id="Mycv">Click Here</button>
           </a>
         </p>
 
@@ -45,7 +43,7 @@ const Hero = () => {
       <div className="right-section animation">
         <Lottie
           className="flex"
-          style={{ width: "300px" }}
+          style={{ maxWidth: "100%", height: "auto" }}
           animationData={devAnimation}
         />
       </div>

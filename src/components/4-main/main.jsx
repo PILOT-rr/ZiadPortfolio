@@ -1,100 +1,81 @@
-import { useState } from "react";
-import "./main.css";
+import React, { useState } from "react";
+import "./main.css"; // Import your CSS file for styling
 import { MyProject } from "./project";
 
 const Main = () => {
-  const [currentActive, SetCurrentActive] = useState("all");
-  const [arr, SetArr] = useState(MyProject);
+  const [currentActive, setCurrentActive] = useState("all");
+  const [projects, setProjects] = useState(MyProject);
 
-  const filterClick = (btnCategory) => {
-    SetCurrentActive(btnCategory);
-    const newArr = MyProject.filter((item) => {
-      const noterNewArr = item.category.find((myItem) => {
-        return myItem === btnCategory;
-      });
-
-      return noterNewArr === btnCategory;
-    });
-    SetArr(newArr);
+  const filterProjects = (category) => {
+    setCurrentActive(category);
+    const filteredProjects = MyProject.filter((project) =>
+      project.category.includes(category)
+    );
+    setProjects(filteredProjects);
   };
 
   return (
     <main className="flex">
-      <section className="flex  left-section">
+      <section id="projects" className="flex left-section">
         <button
           onClick={() => {
-            SetCurrentActive("all");
-            SetArr(MyProject);
+            setCurrentActive("all");
+            setProjects(MyProject);
           }}
-          className={currentActive === "all" ? "active" : null}
+          className={currentActive === "all" ? "active" : ""}
         >
-          all projects
+          All Projects
         </button>
-        <button 
-          onClick={() => {
-            filterClick("html-css");
-          }}
-          className={currentActive === "html-css" ? "active" : null}
+        <button
+          onClick={() => filterProjects("html-css")}
+          className={currentActive === "html-css" ? "active" : ""}
         >
           HTML & CSS
         </button>
         <button
-          onClick={() => {
-            filterClick("JavaScript");
-          }}
-          className={currentActive === "JavaScript" ? "active" : null}
+          onClick={() => filterProjects("JavaScript")}
+          className={currentActive === "JavaScript" ? "active" : ""}
         >
           JavaScript
         </button>
         <button
-          onClick={() => {
-            filterClick("React-&-MUI");
-          }}
-          className={currentActive === "React-&-MUI" ? "active" : null}
+          onClick={() => filterProjects("React-&-MUI")}
+          className={currentActive === "React-&-MUI" ? "active" : ""}
         >
           React & MUI
         </button>
         <button
-          onClick={() => {
-            filterClick("Node-&-Express");
-          }}
-          className={currentActive === "Node-&-Express" ? "active" : null}
+          onClick={() => filterProjects("Node-&-Express")}
+          className={currentActive === "Node-&-Express" ? "active" : ""}
         >
           Node & Express
         </button>
       </section>
 
-      <section className=" flex right-section">
-        {arr.map((item) => {
-          return (
-            <article key={item.imagPath} className="  card">
-              <img width={240} src={item.imagPath} alt="" />
-
-              <div style={{ width: "240px" }} className="box">
-                <h1 className="title">{item.projectTitle} </h1>
-                <p className="sub-title">
-                  Lorem ipsum dolor sit amet consectetur elit adipisicing . Ex
-                  tempore dolor in, accusantium laudantium accusamus.
-                </p>
-
-                <div className="flex icons">
-                  <div style={{ gap: "11px" }} className="flex">
-                    <div className="icon-link"></div>
-                    <div className="icon-github"></div>
-                  </div>
-
-                  <a className="link flex" href="">
-                    more
-                    <span
-                      style={{ alignSelf: "end" }}
-                      className="icon-arrow-right"
-                    ></span>
-                  </a>
+      <section className="flex right-section">
+        {projects.map((project) => (
+          <article key={project.imagePath} className="card">
+            <img width={240} src={project.imagePath} alt="" />
+            <div style={{ width: "240px" }} className="box">
+              <h1 className="title">{project.projectTitle}</h1>
+              <p className="sub-title">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent id mollis nunc. Nulla facilisi. Donec tincidunt lorem
+                nec nibh euismod, vel elementum odio malesuada.
+              </p>
+              <div className="flex icons">
+                <div className="flex">
+                  <div className="icon-link"></div>
+                  <div className="icon-github"></div>
                 </div>
+                <a className="link flex" href="">
+                  More
+                  <span className="icon-arrow-right"></span>
+                </a>
               </div>
-            </article>
-          );
-        })}
+            </div>
+          </article>
+        ))}
       </section>
     </main>
   );

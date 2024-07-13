@@ -1,3 +1,4 @@
+import React from "react";
 import "./SkillsComponent.css"; // Import your CSS file for styling
 
 const SkillsComponent = () => {
@@ -9,39 +10,29 @@ const SkillsComponent = () => {
     { name: "PHP", percentage: 55 },
     { name: "React", percentage: 85 },
     { name: "Laravel", percentage: 55 },
-
     // Add more skills as needed
   ];
 
   return (
-    <section>
-      <div className="skills ">
-        <h1> My Skills</h1>
-        <br />
-        <br />
-        <div className="left-section ">
-          {" "}
-          <ul className="skills-list">
-            <br />
-            {skills.map((skill, index) => (
-              <li key={index}>
-                <div className="skill-name">
-                  {skill.name}
-                  <span className="skill-percentage"> {skill.percentage}%</span>
-                </div>
-                <div className="skill-bar">
-                  <div
-                    className="skill-progress"
-                    style={{
-                      width: `${skill.percentage}%`,
-                      animation: "slideIn 2.5s ease-in-out",
-                    }}
-                  ></div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <section className="skills-section">
+      <div className="skills-container">
+        <h1>My Skills</h1>
+        <ul className="skills-list">
+          {skills.map((skill, index) => (
+            <li key={index}>
+              <div className="skill-name">
+                {skill.name}
+                <span className="skill-percentage"> {skill.percentage}%</span>
+              </div>
+              <div className="skill-bar">
+                <div
+                  className="skill-progress"
+                  style={{ width: `${skill.percentage}%` }}
+                ></div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
