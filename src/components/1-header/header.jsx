@@ -42,17 +42,17 @@ const Header = () => {
             <a href="#">Home</a>
           </li>
           <li>
-            <ScrollLink to="about" smooth={true} duration={300}>
+            <ScrollLink to="about" smooth={true} duration={500}>
               About
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink to="projects" smooth={true} duration={300}>
+            <ScrollLink to="projects" smooth={true} duration={500}>
               Projects
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink to="contact" smooth={true} duration={300}>
+            <ScrollLink to="contact" smooth={true} duration={500}>
               Contact
             </ScrollLink>
           </li>
