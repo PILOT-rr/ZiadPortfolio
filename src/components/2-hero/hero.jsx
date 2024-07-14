@@ -33,10 +33,34 @@ const Hero = () => {
         </p>
 
         <div className="all-icons flex">
-          <div className="icon icon-twitter"></div>
-          <div className="icon icon-instagram"></div>
-          <div className="icon icon-github"></div>
-          <div className="icon icon-linkedin"></div>
+          <a
+            href="https://twitter.com/your_twitter_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="icon icon-twitter"></div>
+          </a>
+          <a
+            href="https://www.instagram.com/ziad_mabrouki?igsh=MXZvM2IwcnF1OW12eg%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="icon icon-instagram"></div>
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="icon icon-github"></div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ziad-mabrouki-53395b314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="icon icon-linkedin"></div>
+          </a>
         </div>
       </div>
 
