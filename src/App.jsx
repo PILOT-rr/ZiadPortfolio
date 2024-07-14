@@ -36,6 +36,26 @@ function App() {
     };
   }, []);
 
+  // Script to override console methods
+  useEffect(() => {
+    const blockInspectElement = () => {
+      const noop = () => {};
+      // Override console methods
+      const methods = ["log", "debug", "info", "warn", "error", "assert", "clear", "dir", "dirxml", "group", "groupCollapsed", "groupEnd", "markTimeline", "profile", "profileEnd", "table", "time", "timeEnd", "timeStamp", "timeline", "timelineEnd", "trace", "count", "exception", "memory", "select"];
+
+      methods.forEach(method => {
+        console[method] = noop;
+      });
+
+      // Prevent inspect element on right-click
+      document.addEventListener("contextmenu", event => event.preventDefault());
+    };
+
+    blockInspectElement();
+
+    
+  }, []);
+
   return (
     <Router>
       {loading ? (
