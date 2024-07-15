@@ -74,17 +74,23 @@ const Header = () => {
               <button className="icon-close" onClick={handleModalClose} />
             </li>
             <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Projects</a>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <ScrollLink to="about" smooth={true} duration={500}>
+              About
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink to="projects" smooth={true} duration={500}>
+              Projects
+            </ScrollLink>
+          </li>
+          <li>
+            <ScrollLink to="contact" smooth={true} duration={500}>
+              Contact
+            </ScrollLink>
+          </li>
           </ul>
         </div>
       )}

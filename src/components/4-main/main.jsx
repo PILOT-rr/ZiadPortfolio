@@ -39,14 +39,14 @@ const Main = () => {
           JavaScript
         </button>
         <button
-          onClick={() => filterProjects("React-&-MUI")}
-          className={currentActive === "React-&-MUI" ? "active" : ""}
+          onClick={() => filterProjects("React & MUI")}
+          className={currentActive === "React & MUI" ? "active" : ""}
         >
           React & MUI
         </button>
         <button
-          onClick={() => filterProjects("Node-&-Express")}
-          className={currentActive === "Node-&-Express" ? "active" : ""}
+          onClick={() => filterProjects("Node & Express")}
+          className={currentActive === "Node & Express" ? "active" : ""}
         >
           Node & Express
         </button>
