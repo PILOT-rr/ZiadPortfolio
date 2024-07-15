@@ -1,4 +1,6 @@
 import "./footer.css";
+// import packageJson from '../../../package.json';
+
 import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => {
@@ -17,7 +19,7 @@ const Footer = () => {
           </li>
       </ul>
 
-      <p>&copy; 2023 Ziad Mabrouki. All rights reserved.  </p>
+      <p>&copy; 2023 Ziad Mabrouki. All rights reserved.    </p>
     </footer>
   );
 };

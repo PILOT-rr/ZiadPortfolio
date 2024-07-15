@@ -8,7 +8,7 @@ const About = () => {
         <section>
           <h1>About Me</h1>
           <p>
-            Hello! I'm Mohammad, a passionate web developer skilled in creating
+            Hello! Im Mohammad, a passionate web developer skilled in creating
             dynamic and responsive websites using React and Vite. I have a
             strong background in frontend development and a keen eye for design,
             ensuring that each project I work on is both functional and
@@ -42,7 +42,7 @@ const About = () => {
           <h2>Interests</h2>
           <p>
             Apart from coding, I enjoy exploring new technologies, reading tech
-            blogs, and participating in coding challenges. When I'm not in front
+            blogs, and participating in coding challenges. When Im not in front
             of my computer, I love spending time outdoors, hiking, and traveling
             to new places.
           </p>
